@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        .top-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            height: 60px;
+        }
+        .tel {
+            display: flex;
+            align-items: center;
+        }
+        .tel a {
+            text-decoration: none;
+            font-size: 21px;
+            color: #fff;
+            transition: all .5s 0s;
+        }
+        .tel img {
+            margin-left: 70px;
+        }
+        .tel p {
+            margin-left: 10px;
+            color: #fff;
+            font-size: 21px;
+        }
+        .tel a:hover{
+            color: #f90;
+        }
+        .link a {
+            vertical-align: middle;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 0 .6px;
+        }
+        .link .b {
+            margin-right: 100px;
+        }
+        .menu{
+            display: flex;
+            height: 100px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+        .menu .log{
+            margin-left: 70px;
+        }
+        .menu .menu-list a{
+            text-decoration: none;
+            margin: 0 20px;
+            color: #444;
+            font-size: 25px;
+        }
+        .menu-list a:hover{
+            border-bottom: 3px solid #f90;
+            padding-bottom: 20px;
+        }
+        .menu .menu-list .menu-list-fir{
+            border-bottom: 3px solid #f90;
+            padding-bottom: 20px;
+        }
+        .men-but{
+            margin-right: 100px;
+            width: 150px;
+            height: 55px;
+            font-size: 8px;
+            color: #f90;
+            background-color: #fff;
+            border: 2px solid #f90;
+            border-radius: 2px;
+        }
+        .men-but:hover{
+            background-color: cornflowerblue;
+            border: cornflowerblue;
+            color: #FFF;
+        }
+        .bigcat{
+            display: flex;
+            height: 700px;
+            background-color: #e0e0d0;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .img img{
+            margin-right: 150px;
+        }
+        .bigcat .text{
+            margin-left: 123px;    
+            margin-top: 10px;        
+        }
+        .text h3{
+            font-size: 40px;
+            color: #333;
+        }
+        .text h1{
+            font-size: 60px;
+            color: cornflowerblue;
+        }
+        .text p{
+            font-size: 20px;
+            color: #000;
+        }
+        .but{
+            margin-top: 40px;
+            background-color: orange;
+            color: white;
+            font-size: 10px;
+            border: orange solid 2px;
+            width: 200px;
+            height: 70px;
+            border-radius: 2px;
+        }
+        .but:hover{
+            background-color: #000;
+            border: #000;
+        }
+        .woman{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 700px;
+        }
+        .woman .img img{
+            margin-left: 100px;
+            margin-right: 0px;
+        }
+        .woman .wo-about{            
+            margin-right: 100px;       
+            width: 570px;     
+        }
+        h2{
+            font-size: 50px;
+            color: #555;
+        }
+        h4{
+            margin: 20px 0;
+            font-size: 27px;
+            color: cornflowerblue;
+        }
+        p{
+            margin: 10px;
+            color: #aaa;
+        }
+        .people{
+            display: flex;
+            flex-direction: column;
+            height: 700px;
+            background-color: #eed;
+        }
+        .peotext{
+            margin-top: 100px;
+            margin: auto;
+            text-align: center;
+        }        
+        .people .peoani{
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0 60px 0;      
+        }
+        .peoani .hov:hover{
+            scrollbar-face-color: #444;
+        }
+        .people .peoani .a{
+            margin-left: 100px;
+        }
+        .peoani .c{
+            margin-right: 100px;
+        }
+        .family{
+            display: flex;
+            background-color: #fff;
+            padding-top: 50px;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .dogpeo{
+            width: 570px;   
+            margin-right: 90px;       
+        }
+        .dogper{
+            margin-left: 90px ;
+            display: flex;
+            width: 470px;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .dogper img{
+            margin: 40px 0;
+        }  
+        .up{
+            padding: 50px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #FFF;
+        }      
+        .up h4{
+            font-size: 60px;
+        }
+        .up p{
+            margin-top: -30px;
+            font-size: 20px;
+            color: #222222;
+        }
+        .up-but button{
+            background-color: #f90;
+            color: #FFF;
+            margin:10px 10px;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-line">
+        <div class="tel">
+            <img src="https://picsum.photos/40/40?random=8" alt="">
+            <p>Toll-free:</p>
+            <a href="#">(123) 456-7890</a>
+        </div>
+        <div class="link">
+            <a href="#" class="link-a"><img src="https://picsum.photos/15/15?random=1" alt=""></a>
+            <a href="#" class="link-a"><img src="https://picsum.photos/15/15?random=2" alt=""></a>
+            <a href="#" class="link-a"><img src="https://picsum.photos/15/15?random=3" alt=""></a>
+            <a href="#" class="link-a b"><img src="https://picsum.photos/15/15?random=4" alt=""></a>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="log"><img src="https://picsum.photos/250/70?random=1" alt=""></div>
+        <nav class="menu-list">
+            <a href="#" class="menu-list-fir">Home</a>
+            <a href="#">About</a>
+            <a href="#">Events</a>
+            <a href="#">News</a>
+            <a href="#">Contacts</a>
+        </nav>
+        <div>
+            <button class="men-but">DONATE NOW!</button>
+        </div>
+    </div>
+    <div class="bigcat">
+        <div class="text">
+            <h3>Animals Need</h3>
+            <h1>YOUR Help!</h1>
+            <p>You can chip in with money & effort!</p>
+            <button class="but">DONATE NOW!</button>
+        </div>
+        <div class="img">
+            <img src="https://picsum.photos/600/490?random=1" alt="">
+        </div>
+    </div>
+    <div class="woman">
+        <div class="img">
+            <img src="https://picsum.photos/500/390?random=2" alt="">
+        </div>
+        <div class="wo-about">
+            <h2>About Us</h2>
+            <h4>What Makes Us Care About Pets?</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic, pariatur officia? Non cumque at nam doloribus, rem deserunt id omnis quibusdam illum, enim nobis commodi us quibusdam culpa reprehenderit a iure quasi dolore perspiciatis praesentium aut.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur iusto doloribus laudantium eaque expedita officia quaerat ipsam neque voluptas aperiam? Quae, amet! Neque laboriosam magni aut perspiciatis.</p>
+            <button class="but">LEARN MORE</button>
+        </div>
+    </div>
+    <div class="people">
+        <div class="peotext">
+            <h2>How You Can Help</h2>
+            <h4>There Are Countless Ways You Can Join In & Help Us!</h4>
+        </div>
+        <div class="peoani">
+            <img src="https://picsum.photos/355/450?random=11" class="a hov">
+            <img src="https://picsum.photos/355/450?random=12" class="hov">
+            <img src="https://picsum.photos/355/450?random=13" class="c hov">
+        </div>
+    </div>
+    <div class="family">
+        <div class="dogper">
+            <h2>Volunteer to Save</h2>
+            <h2>Animals Now!</h2>
+            <img src="https://picsum.photos/470/365?random=14" >
+        </div>
+        <div class="dogpeo">
+            <img src="https://picsum.photos/570/365?random=15" alt="">
+            <p>With so many pets less fortunate than your cat and dog, there’s always something you can do about it!</p>
+            <button class="but">VOLUNTEER</button>
+        </div>
+        <div class="up">
+            <h2>Upcoming Events</h2>
+            <h4>Kennel Training Class</h4>
+            <p>FR, June 11th</p>
+            <div class="up-but">
+                <button class="men-but">DETAILS</button>
+                <button class="men-but">VIEW ALL</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
