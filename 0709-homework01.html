@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="dist/assets/owl.theme.default.min.css">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .slides {
+            width: 100%;
+            position: relative;
+        }
+
+        .ccc {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #2f2f2f;
+            opacity: .5;
+        }
+
+        .man .ccc,
+        .yellow .ccc,
+        .diamond .ccc {
+            display: none;
+        }
+
+        .man:hover .ccc,
+        .yellow:hover .ccc,
+        .diamond:hover .ccc {
+            display: block;
+        }
+
+        .page .title {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page .title a {
+            color: #fff;
+        }
+
+        .page .title .logo {
+            width: calc(100% / 5 + 20px);
+            min-width: 261px;
+            display: flex;
+            margin-bottom: 2px;
+        }
+
+        .page .title .logo a {
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+
+        .page .title .logo span {
+            display: block;
+            margin-top: 10px;
+            padding-right: 40px;
+            font-size: 30px;
+            width: 80%;
+        }
+
+        .page .title .logo img {
+            vertical-align: middle;
+            width: 20%;
+        }
+
+        .page .title .menu a {
+            font-size: 18px;
+            margin-left: 12px;
+            text-decoration: none;
+            transition: .6s;
+        }
+
+        .page .title .menu a:hover {
+            color: rgba(50, 80, 250, .7);
+        }
+
+        .page .container {
+            position: relative;
+            top: -450px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            margin-top: 100px;
+        }
+
+        .earth .container h2 {
+            font-size: 90px;
+        }
+
+        .starrysky .container h4,
+        .mountain .container h4 {
+            padding: 8px;
+            border-radius: 2px;
+            background-color: rgba(100, 120, 250, .5);
+        }
+
+        .bike .container h2,
+        .pc .container h2 {
+            padding: 8px;
+            border-radius: 2px;
+            background-color: rgba(100, 120, 250, .4);
+        }
+
+        .earth .container h4 {
+            font-size: 20px;
+        }
+
+        .page .button-group {
+            position: relative;
+            top: -450px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            margin: auto;
+            display: flex;
+            margin-top: 70px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .page .button-group button {
+            padding: 3px;
+            margin-left: 25px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #334faf;
+            border: 1px solid #334faf;
+            border-radius: 1px;
+            transition: .6s;
+        }
+
+        .page .button-group button:hover {
+            opacity: .5;
+        }
+
+        .earth {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_3726256a5da840e8b1df0e988639bc67~mv2_d_2800_1573_s_2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_3726256a5da840e8b1df0e988639bc67~mv2_d_2800_1573_s_2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .starrysky {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_a7fa726f76fa47e287f34501107f26d0~mv2_d_3000_2000_s_2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_a7fa726f76fa47e287f34501107f26d0~mv2_d_3000_2000_s_2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .pc {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_e1e737197e9744cd8c7ea8b8a65d0f67~mv2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_e1e737197e9744cd8c7ea8b8a65d0f67~mv2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .mountain {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_08f86cfb9419470fba577b0807ee1b20~mv2_d_1920_1442_s_2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_08f86cfb9419470fba577b0807ee1b20~mv2_d_1920_1442_s_2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .bike {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_15ddb32642bb45c29d4455f566cb4047~mv2_d_3264_2448_s_4_2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_15ddb32642bb45c29d4455f566cb4047~mv2_d_3264_2448_s_4_2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .diamond {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_3bef720435a24d51b53e949bc7f0b5e2~mv2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_3bef720435a24d51b53e949bc7f0b5e2~mv2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .yellow {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_0b2b3f6a706b4e89b261f11e27d35990~mv2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_0b2b3f6a706b4e89b261f11e27d35990~mv2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .man {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_d1f7e9cb4aab401eabf0bb784099a834~mv2_d_2840_1440_s_2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_d1f7e9cb4aab401eabf0bb784099a834~mv2_d_2840_1440_s_2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+
+        .people {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_07310aa55e4a4c869120a07bb375edf8~mv2_d_2500_1667_s_2.jpg/v1/fill/w_1349,h_568,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_07310aa55e4a4c869120a07bb375edf8~mv2_d_2500_1667_s_2.webp);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+        }
+        .col-2 {
+            width: calc(100% / 12 * 2);
+        }
+
+        .col-3 {
+            width: calc(100% / 12 * 3);
+        }
+
+        .col-4 {
+            width: calc(100% / 12 * 4);
+        }
+
+        .col-5 {
+            width: calc(100% / 12 * 5);
+        }
+
+        .col-6 {
+            width: calc(100% / 12 * 6);
+        }
+
+        .col-7 {
+            width: calc(100% / 12 * 7);
+        }
+
+        .col-8 {
+            width: calc(100% / 12 * 8);
+        }
+        
+
+
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info {
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .info .part {
+            margin: 70px 0px;
+            flex-wrap: nowrap;
+        }
+
+        .info :nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .info .item:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info .item:last-child {
+            padding: 0px 20px;
+            line-height: 1.5;
+        }
+
+        .info .item:last-child h4 {
+            text-align: center;
+        }
+
+        .info .item:last-child h5 {
+            margin: 3px 0 5px 0;
+            text-align: center;
+        }
+
+        .info .person {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_2a410e14076f4a7b9326a915b4517bc8~mv2.png/v1/fill/w_86,h_87,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_2a410e14076f4a7b9326a915b4517bc8~mv2.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 110px;
+            height: 110px;
+        }
+
+        .info .resume {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_2ec10b788bc94ab399d5493f29937b4e~mv2.png/v1/fill/w_86,h_86,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_2ec10b788bc94ab399d5493f29937b4e~mv2.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 130px;
+            height: 130px;
+        }
+
+        .info .rocket {
+            background-image: url(https://static.wixstatic.com/media/5a71f2_0f4c475255a540eeafdb78445852d7fe~mv2.png/v1/fill/w_90,h_88,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_0f4c475255a540eeafdb78445852d7fe~mv2.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 110px;
+            height: 110px;
+        }
+
+        .info .item:first-child h2 {
+            margin-top: 6px;
+        }
+
+        .info .item:first-child h3 {
+            margin-top: 3px;
+            margin-bottom: 4px;
+        }
+
+        .info .item:first-child .text {
+            margin-top: 5px;
+            line-height: 1.2;
+        }
+
+        .info .mag :first-child {
+            border: 7px solid #000;
+            width: 80px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info .mag :first-child span {
+            display: block;
+            width: 50px;
+            height: 3px;
+            margin-left: -2px;
+            transform: rotate(-45deg);
+            background-color: red;
+            border: red 1px solid;
+        }
+
+        .info .mag :last-child {
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+            border-width: 15px 10px 0px 10px;
+            width: 0;
+            height: 0;
+            margin-left: 20px;
+        }
+
+        .practice {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .practice .title {
+            width: 100%;
+            background-image: url(https://static.wixstatic.com/media/5b7e139d046c40c1a1acde7162607721.jpg/v1/fill/w_1349,h_102,al_c,q_80,usm_0.66_1.00_0.01/5b7e139d046c40c1a1acde7162607721.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 127px;
+            text-align: center;
+            position: relative;
+        }
+
+        .til-text p {
+            color: #fff;
+            font-size: 22px;
+            position: relative;
+            top: -79px;
+            display: inline-block;
+        }
+
+        .blue {
+            background-color: #045184;
+            width: 100%;
+            height: 100%;
+            opacity: .8;
+        }
+
+        .practice .date {
+            width: 100%;
+        }
+
+        .practice .item h5,
+        .tool .item h5 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .practice .date img {
+            height: 95px;
+            width: 95px;
+            margin-bottom: 10px;
+        }
+
+        .practice .item {
+            height: 380px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .practice .item h6 {
+            color: #f22;
+            font-size: 15px;
+            margin: 7px 0px;
+        }
+
+        .dote {
+            width: 80%;
+            margin: 8px 0px 0px 10px;
+            text-indent: -10px;
+        }
+
+        .dote::before {
+            content: '•';
+            margin-right: 2px;
+        }
+
+
+        .tool .title {
+            width: 100%;
+            background-image: url(https://static.wixstatic.com/media/5b7e139d046c40c1a1acde7162607721.jpg/v1/fill/w_1349,h_102,al_c,q_80,usm_0.66_1.00_0.01/5b7e139d046c40c1a1acde7162607721.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 127px;
+            text-align: center;
+            position: relative;
+        }
+
+        .tool .item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            height: 500px;
+        }
+
+        .tool .item .img-group {
+            height: 150px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 8px;
+        }
+
+        .coperation .title {
+            width: 100%;
+            background-image: url(https://static.wixstatic.com/media/5b7e139d046c40c1a1acde7162607721.jpg/v1/fill/w_1349,h_129,al_c,q_80,usm_0.66_1.00_0.01/5b7e139d046c40c1a1acde7162607721.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 127px;
+            text-align: center;
+            position: relative;
+        }
+
+        .coperation .row {
+            width: 100%;
+        }
+
+        .coperation .item .part2 {
+            height: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .coperation .item img {
+            margin-top: 20px;
+            max-width: 150px;
+            max-height: 55px;
+        }
+
+        footer {
+            border-top: 5px solid #666;
+            background-color: #ddd;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        footer .item {
+            padding: 20px;
+            box-sizing: border-box;
+            margin: 15px 0px;
+        }
+
+        footer .back {
+            display: flex;
+            justify-content: center;
+            width: 100px;
+        }
+
+        footer .back img {
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slides">
+        <div class="owl-carousel owl-theme">
+            <div class="page earth">
+                <div class="ccc"></div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                            alt="">
+                        <a href="#">
+                            <span>Bulid School</span>
+                            developer career builder
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <a href="#">台北班介紹</a>
+                        <a href="#">新竹班介紹</a>
+                        <a href="#">中華大學校內班簡介</a>
+                        <a href="#">Blog</a>
+                        <a href="#">歷屆老師</a>
+                        <a href="#">關於</a>
+                        <a href="#">問題及洽詢</a>
+                    </nav>
+                </div>
+                <div class="container">
+                    <h2>Bulid School</h2>
+                    <h4>Build School 是軟體開發教育的先鋒，為學生打造更有競爭力的職涯</h4>
+                </div>
+                <div class="button-group">
+                    <button>台北班簡介及報名(2020/10月後開課)</button>
+                    <button>新竹班簡介(2020/12月後開課)</button>
+                    <button>即刻報名 (中華大學學生)</button>
+                </div>
+            </div>
+            <div class="page starrysky">
+                <div class="ccc"></div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                            alt="">
+                        <a href="#">
+                            <span>Bulid School</span>
+                            developer career builder
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <a href="">台北班介紹</a>
+                        <a href="">新竹班介紹</a>
+                        <a href="">中華大學校內班簡介</a>
+                        <a href="">Blog</a>
+                        <a href="">歷屆老師</a>
+                        <a href="">關於</a>
+                        <a href="">問題及洽詢</a>
+                    </nav>
+                </div>
+                <div class="container">
+                    <h2>想搭上火箭?門票是給想成為軟體工程師的你</h2>
+                    <h4>BUILD SCHOOL - DEVELOPER CAREER BUILDER</h4>
+                </div>
+                <div class="button-group">
+                    <button>台北班簡介及報名(2020/10月後開課)</button>
+                    <button>新竹班簡介(2020/12月後開課)</button>
+                    <button>即刻報名 (中華大學學生)</button>
+                </div>
+            </div>
+            <div class="page pc">
+                <div class="ccc"></div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                            alt="">
+                        <a href="#">
+                            <span>Bulid School</span>
+                            developer career builder
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <a href="">台北班介紹</a>
+                        <a href="">新竹班介紹</a>
+                        <a href="">中華大學校內班簡介</a>
+                        <a href="">Blog</a>
+                        <a href="">歷屆老師</a>
+                        <a href="">關於</a>
+                        <a href="">問題及洽詢</a>
+                    </nav>
+                </div>
+                <div class="container">
+                    <h2>這裏沒有考試只有滿滿的程式碼</h2>
+                    <h4>NO TEST BUT YOUR CODES</h4>
+                </div>
+                <div class="button-group">
+                    <button>台北班簡介及報名(2020/10月後開課)</button>
+                    <button>新竹班簡介(2020/12月後開課)</button>
+                    <button>即刻報名 (中華大學學生)</button>
+                </div>
+            </div>
+            <div class="page mountain">
+                <div class="ccc"></div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                            alt="">
+                        <a href="#">
+                            <span>Bulid School</span>
+                            developer career builder
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <a href="">台北班介紹</a>
+                        <a href="">新竹班介紹</a>
+                        <a href="">中華大學校內班簡介</a>
+                        <a href="">Blog</a>
+                        <a href="">歷屆老師</a>
+                        <a href="">關於</a>
+                        <a href="">問題及洽詢</a>
+                    </nav>
+                </div>
+                <div class="container">
+                    <h2>前往峰頂的路上有人帶!</h2>
+                    <h4>START CODING AND GET COACHED FROM MENTORS</h4>
+                </div>
+                <div class="button-group">
+                    <button>台北班簡介及報名(2020/10月後開課)</button>
+                    <button>新竹班簡介(2020/12月後開課)</button>
+                    <button>即刻報名 (中華大學學生)</button>
+                </div>
+            </div>
+            <div class="page bike">
+                <div class="ccc"></div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                            alt="">
+                        <a href="#">
+                            <span>Bulid School</span>
+                            developer career builder
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <a href="">台北班介紹</a>
+                        <a href="">新竹班介紹</a>
+                        <a href="">中華大學校內班簡介</a>
+                        <a href="">Blog</a>
+                        <a href="">歷屆老師</a>
+                        <a href="">關於</a>
+                        <a href="">問題及洽詢</a>
+                    </nav>
+                </div>
+                <div class="container">
+                    <h2>動手做出東西才能解決問題</h2>
+                    <h4>BUILD SOMETHING AND SOLVE THE PROBLEM, THAT'S MY STYLE
+                    </h4>
+                </div>
+                <div class="button-group">
+                    <button>台北班簡介及報名(2020/10月後開課)</button>
+                    <button>新竹班簡介(2020/12月後開課)</button>
+                    <button>即刻報名 (中華大學學生)</button>
+                </div>
+            </div>
+            <div class="page diamond">
+                <div class="ccc">
+                    <div class="title">
+                        <div class="logo">
+                            <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                                alt="">
+                            <a href="#">
+                                <span>Bulid School</span>
+                                developer career builder
+                            </a>
+                        </div>
+                        <nav class="menu">
+                            <a href="">台北班介紹</a>
+                            <a href="">新竹班介紹</a>
+                            <a href="">中華大學校內班簡介</a>
+                            <a href="">Blog</a>
+                            <a href="">歷屆老師</a>
+                            <a href="">關於</a>
+                            <a href="">問題及洽詢</a>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+            <div class="page yellow">
+                <div class="ccc">
+                    <div class="title">
+                        <div class="logo">
+                            <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                                alt="">
+                            <a href="#">
+                                <span>Bulid School</span>
+                                developer career builder
+                            </a>
+                        </div>
+                        <nav class="menu">
+                            <a href="">台北班介紹</a>
+                            <a href="">新竹班介紹</a>
+                            <a href="">中華大學校內班簡介</a>
+                            <a href="">Blog</a>
+                            <a href="">歷屆老師</a>
+                            <a href="">關於</a>
+                            <a href="">問題及洽詢</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="page man">
+                <div class="ccc">
+                    <div class="title">
+                        <div class="logo">
+                            <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                                alt="">
+                            <a href="#">
+                                <span>Bulid School</span>
+                                developer career builder
+                            </a>
+                        </div>
+                        <nav class="menu">
+                            <a href="">台北班介紹</a>
+                            <a href="">新竹班介紹</a>
+                            <a href="">中華大學校內班簡介</a>
+                            <a href="">Blog</a>
+                            <a href="">歷屆老師</a>
+                            <a href="">關於</a>
+                            <a href="">問題及洽詢</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <div class="page people">
+                <div class="ccc"></div>
+                <div class="title">
+                    <div class="logo">
+                        <img src="https://static.wixstatic.com/media/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.png/v1/fill/w_43,h_47,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1e714a102af34089a58b0544cc0ca35d~mv2.webp"
+                            alt="">
+                        <a href="#">
+                            <span>Bulid School</span>
+                            developer career builder
+                        </a>
+                    </div>
+                    <nav class="menu">
+                        <a href="">台北班介紹</a>
+                        <a href="">新竹班介紹</a>
+                        <a href="">中華大學校內班簡介</a>
+                        <a href="">Blog</a>
+                        <a href="">歷屆老師</a>
+                        <a href="">關於</a>
+                        <a href="">問題及洽詢</a>
+                    </nav>
+                </div>
+                <div class="container">
+                    <h2>BUILD SCHOOL</h2>
+                    <h4>Build School is a pioneer of software developer education and career builder for college
+                        students
+                    </h4>
+                </div>
+                <div class="button-group">
+                    <button>Apply Now (Taipei Class)</button>
+                    <button>Apply Now (HsinChu Class)</button>
+                    <button>Apply Now (Chung Hua University)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info">
+        <div class="part row">
+            <div class="item col-6">
+                <div class="mag">
+                    <div><span></span></div>
+                    <div></div>
+                </div>
+                <h2>Build School</h2>
+                <h3>/*我們的理念*/</h3>
+                <div class="text">
+                    <p>
+                        Build = 將程式碼編譯及建置成可執行的軟體
+                    </p>
+                    <p>Build = 動手做</p>
+                    <p>Build = 軟體開發職涯的打造者</p>
+                </div>
+            </div>
+            <div class="item col-6">
+                <h4>實作及就業導向的軟體開發學校</h4>
+                <p>因應數位新時代的來臨，軟體、App、IoT、SaaS、雲端平台的應用需求大爆炸，軟體工程師的招募需求持續上升，以2016年5月求職平台的統計資料，從高科技、電商、金融、傳產、網路服務、軟體資訊、新創等各行業，台灣至少有
+                    27,000位軟體開發工程師的職缺，甚至日本、新加坡等軟體及App 外商也來台灣求才。</p>
+                <p>為了彌補企業求才所需技能及實務教學上的落差，我們將前進校園，幫助想搭上軟體開發及互聯網經濟這艘火箭的同學們，打造更有競爭力的職涯!</p>
+            </div>
+        </div>
+        <div class="part row">
+            <div class="item col-6">
+                <div class="person"></div>
+                <h2>動手實作才是真學習</h2>
+            </div>
+            <div class="item col-6">
+                <h4>打造專案作品的學習方式</h4>
+                <h5>(Project-based Learning)</h5>
+                <p>透過身經百戰的實務講師、各大企業的資深軟體工程師或CTO，帶領同學實作一個真正能運作的產品開發，解決真實世界的問題，透過專題過程中的實作，培養解決問題的能力，這裏不只是程式教學或教育訓練，學的不只是技能，而是Learn
+                    how to learn，以因應變化多端的軟體開發技能，及自我尋找解答的能力。</p>
+            </div>
+        </div>
+        <div class="part row">
+            <div class="item col-6">
+                <div class="resume"></div>
+                <h2>就業銜接</h2>
+            </div>
+            <div class="item col-6">
+                <h4>真正企業職場所需技能</h4>
+                <h5>(Career Readiness)</h5>
+                <p>除了透過打造專題作品過程，學到了技術及硬技能外，不同於一般的軟體培訓，我們更加入了簡報技巧、履歷及面試準備、以及真正軟體開發的團隊溝通及運作，這些軟實力
+                    (Soft-Skill)的培養，讓同學能提早做好準備，在職場上成為一位專業的軟體工程師!</p>
+            </div>
+        </div>
+        <div class="part row">
+            <div class="item col-6">
+                <div class="rocket"></div>
+                <h2>連結及影響力</h2>
+            </div>
+            <div class="item col-6">
+                <h4>企業導師的連結</h4>
+                <h5>(Mentor Network)</h5>
+                <p>每一位在軟體開發上有實務經驗的企業導師，他們是各大企業的主管、資深軟體工程師或 CTO，其人際連結及資源將帶給同學更多更好的就業機會，你將比別人站得更高，看得更遠!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="practice">
+        <div class="title til-text">
+            <div class="blue"></div>
+            <p>18 - 24週的實作及作品開發 - 從訓練、就業、到企業連結</p>
+        </div>
+        <div class="date row">
+            <div class="item col-3">
+                <h5>第 1 - 4 個月</h5>
+                <img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiBpZD0iY29tcC1pd29uaTU4OHN2Z2NvbnRlbnQiIGRhdGEtYmJveD0iMCAxOS4yIDIwMCAxNjEuNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSItMS4wNjM4Mjk3ODcyMzQwNDE2IC0xLjA2MzgyOTc4NzIzNDA0NTIgMjAyLjEyNzY1OTU3NDQ2ODA4IDIwMi4xMjc2NTk1NzQ0NjgwOCIgcm9sZT0iaW1nIj4KICAgIDxnPgogICAgICAgIDxwYXRoIGQ9Ik0xOTAuMSA4MC44aC01LjVWMzEuNGMwLTcuNC00LjktMTIuMi0xMi41LTEyLjJIMTQuOEM3LjYgMTkuMiAwIDIzLjUgMCAzMS40djEwMy40YzAgNy42IDcuMyAxNS4xIDE0LjggMTUuMWg1Ni45TDY2LjggMTczaC01LjNjLTIuMSAwLTMuOCAxLjctMy44IDMuOHMxLjcgMy44IDMuOCAzLjhoNjEuNmMyLjEgMCAzLjgtMS43IDMuOC0zLjhzLTEuNy0zLjgtMy44LTMuOEgxMTlsLTUtMjNoMzIuMXYyMC45YzAgNS40IDQuNCA5LjkgOS45IDkuOWgzNC4xYzUuNCAwIDkuOS00LjQgOS45LTkuOVY5MC42YzAtNS40LTQuNC05LjgtOS45LTkuOHptLTM2LjMgMjNoMzguNXY1My44aC0zOC41di01My44em0zNi4zLTE1LjNjMS4yIDAgMi4yIDEgMi4yIDIuMnY1LjVoLTM4LjV2LTUuNWMwLTEuMiAxLTIuMiAyLjItMi4yaDM0LjF6TTE1NiA4MC44Yy01LjQgMC05LjkgNC40LTkuOSA5Ljl2MjguNkg3Ljd2LTc3aDE2OS4ydjM4LjVIMTU2ek03LjcgMzEuNGMwLTMuMyA0LjQtNC41IDcuMS00LjVoMTU3LjNjNC4yIDAgNC44IDIuMiA0LjggNC41djMuMkg3Ljd2LTMuMnptMTAzLjQgMTQxLjdINzQuN2w0LjktMjMuMWgyNi41bDUgMjMuMXptLTEuOC0zMC44SDE0LjhjLTMuMiAwLTcuMS00LjEtNy4xLTcuNXYtNy45aDEzOC41djE1LjRoLTM2Ljl6bTgzIDI4LjZjMCAxLjItMSAyLjItMi4yIDIuMkgxNTZjLTEuMiAwLTIuMi0xLTIuMi0yLjJ2LTUuNWgzOC41djUuNXoiLz4KICAgIDwvZz4KPC9zdmc+"
+                    alt="">
+                <h6>程式基礎教學</h6>
+                <div class="dote">業界實戰講師</div>
+                <div class="dote">企業主管/創業家/CTO 演講</div>
+            </div>
+            <div class="item col-3">
+                <h5>第 5 - 6 個月</h5>
+                <img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiBpZD0iY29tcC1pd29tZmo2M3N2Z2NvbnRlbnQiIGRhdGEtYmJveD0iNTAgMCAxMDAgMjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjUwIDAgMTAwIDIwMCIgcm9sZT0iaW1nIj4KICAgIDxnPgogICAgICAgIDxwYXRoIGQ9Ik05NyAwaDd2MzNoLTdWMHoiLz4KICAgICAgICA8cGF0aCBkPSJNNzUuMiAzNi45TDY2LjYgMjJsNi41LTMuNiA4LjUgMTQuOC02LjQgMy43eiIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMDYgNjAuNXY3LjRjMTEgMCAyMC40IDguOCAyMC40IDIwLjIgMCAuMS0uMSAwLS4xIDBoNy40Yy4yLTE1LTEyLTI3LjctMjcuNC0yOC0uMSAwLS4zLjQtLjMuNHoiLz4KICAgICAgICA8cGF0aCBkPSJNMTAwIDQyLjFjLTI3LjYgMC01MCAyMi4zLTUwIDQ5LjkgMCA4IDEuOSAxNS45IDUuNiAyMyAyLjUgNS43IDUuOCAxMS4yIDkuMyAxNi4zQzY5LjMgMTM4IDczIDE0My42IDczIDE1MHYzM2MwIDIgMS42IDIuMiAzLjcgMi4yaDcuNWMuNiA3IDcuNCAxNC44IDE1LjggMTQuOHMxNS4yLTcuOCAxNS44LTE0LjhoNy41YzIuMSAwIDMuNyAwIDMuNy0yLjJ2LTMzYzAtNi40IDMuOC0xMi4xIDguMi0xOC43IDMuNy01LjMgNi45LTEwLjkgOS40LTE2LjggMy41LTcgNS40LTE0LjcgNS40LTIyLjUgMC0yNy41LTIyLjQtNDkuOS01MC00OS45em0wIDE1MC41Yy00LjMgMC03LjgtNC40LTguMy03LjRoMTYuN2MtLjYgMy00LjEgNy40LTguNCA3LjR6bTIwLTE0LjRIODF2LTEwaDM5djEwem0wLTEySDgxdi03aDM5djd6bTAtOUg4MXYtNmgzOXY2em0xNy45LTQ3LjFoLS45djEuNGMtMiA1LjYtNC45IDEwLjctOC4zIDE1LjctNC43IDcuMS04LjQgMTMtOC43IDIySDgwLjdjLS4zLTktNC41LTE0LjktOS4xLTIyLTMtNC43LTYuNS05LjQtOC41LTE1LjJ2LS4zYy0zLTYtNS4yLTEyLjgtNS4yLTE5LjYgMC0yMy41IDE4LjktNDIuNSA0Mi40LTQyLjVzNDIuNCAxOC40IDQyLjQgNDEuOWMtLjEgNi43LTEuOCAxMy42LTQuOCAxOC42eiIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMjUuMyAzNi45bC02LjQtMy43IDguNS0xNC44IDYuNCAzLjctOC41IDE0Ljh6Ii8+CiAgICA8L2c+Cjwvc3ZnPg=="
+                    alt="">
+                <h6>作品導向實作</h6>
+                <div class="dote">Web / App 作品開發 - 企業導師指導</div>
+                <div class="dote">不只是 Demo - 真實可運作成果</div>
+                <div class="dote">團隊開發 - 真實軟體開發團隊的運作及分工 (Agile 敏捷, kanban 看板, CI 自動化建置 ...)</div>
+            </div>
+            <div class="item col-3">
+                <h5>第 6 - 7 月</h5>
+                <img src="paper.svg" alt="">
+                <h6>作品發表</h6>
+                <div class="dote">簡報及溝通技巧</div>
+                <div class="dote">作品及程式碼講解</div>
+                <div class="dote">個人履歷準備 – Github, codepen …</div>
+            </div>
+            <div class="item col-3">
+                <h5>未來及展望</h5>
+                <img src="https://static.wixstatic.com/media/9f34614e8922485da75285918bc07a85.png/v1/fill/w_88,h_88,al_c,q_85,usm_0.66_1.00_0.01/9f34614e8922485da75285918bc07a85.webp"
+                    alt="">
+                <h6>就業及企業導師諮詢</h6>
+                <div class="dote">就業媒合或未來職涯諮詢</div>
+                <div class="dote">企業導師 -人際連結及資源</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tool row">
+        <div class="title til-text">
+            <div class="blue"></div>
+            <p>在課程及作品實作中，將採用這些工具 - 熟悉實務上軟體開發團隊的運作、分工及真實專案的流程 </p>
+        </div>
+        <div class="item col-3">
+            <div class="img-group"><img
+                    src="https://static.wixstatic.com/media/5a71f2_868f17332f214b9d86734bf26e59940a~mv2.png/v1/fill/w_112,h_46,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_868f17332f214b9d86734bf26e59940a~mv2.webp"
+                    alt="">
+                <img src="https://static.wixstatic.com/media/5a71f2_c6c8344c1efd4032a1231408aa6b6c37~mv2.png/v1/fill/w_96,h_79,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_c6c8344c1efd4032a1231408aa6b6c37~mv2.webp"
+                    alt="">
+            </div>
+
+            <h5>版本控管及程式碼管理</h5>
+            <div class="dote">學員之練習及作品之程式碼，皆採用主流的 git 當版本控管，熟悉版控的各種操作及實務專案運用; 課程中公開之練習程式碼，提交至 GitHub 上，其它學員可參考或供講師 Code
+                Review檢閱，並熟悉 Open Source 生態及工具</div>
+        </div>
+        <div class="item col-3">
+            <div class="img-group">
+                <img src="https://static.wixstatic.com/media/5a71f2_58bbd95542dc470f99be85f345893405~mv2.png/v1/fill/w_113,h_58,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_58bbd95542dc470f99be85f345893405~mv2.webp"
+                    alt="">
+                <img src="https://static.wixstatic.com/media/5a71f2_8a30597f0eaa4e219e8e19ce484061a5~mv2.png/v1/fill/w_112,h_35,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_8a30597f0eaa4e219e8e19ce484061a5~mv2.webp"
+                    alt="">
+            </div>
+            <h5>作品開發及團隊管理</h5>
+            <div class="dote">除了使用 GitHub 外，專題開發階段也將使用 Microsoft Azure DevOps Services (原名Visual Studio Team
+                Services)進行團隊開發、包括程式碼管理、工作項目追蹤、自動化建置等，熟悉一個軟體開發專案之流程、分工及日常工作。</div>
+            <div class="dote">也可透過目前許多開發團隊常用的專案管理及看板工具 - Trello，進行工作分派、追蹤、或整個班的工作事項管理</div>
+        </div>
+        <div class="item col-3">
+            <div class="img-group">
+                <img src="https://static.wixstatic.com/media/5a71f2_448128a8a264471aa0039db6de58e648~mv2_d_5554_1600_s_2.png/v1/fill/w_141,h_41,al_c,q_85,usm_0.66_1.00_0.01/Microsoft_Azure_Logo_1600.webp"
+                    alt="">
+                <img src="https://static.wixstatic.com/media/5a71f2_8ba5a1af3eb04e1ca2171c37a386ab1e~mv2_d_1200_1591_s_2.png/v1/fill/w_44,h_58,al_c,q_85,usm_0.66_1.00_0.01/AzureSQL.webp"
+                    alt="" style="width: 55px; height: 73px ;">
+            </div>
+            <h5>雲端平台及服務</h5>
+            <div class="dote">
+                雲端平台的使用已逐漸成為一個成熟軟體開發團隊之基礎，並讓開發、測試、佈署工作更加的便利及自動化。因此學員將使用 Microsoft Azure 當成作品及專案應用系統執行的雲端平台，包括AzureApp
+                Service 建立網站服務、AzureSQLDatabase 建立資料庫服務
+            </div class="dote">
+        </div>
+        <div class="item col-3">
+            <div class="img-group">
+                <img src="https://static.wixstatic.com/media/5a71f2_82b3c4f58443454d908e8561b65c41e9~mv2.png/v1/fill/w_170,h_41,al_c,q_85,usm_0.66_1.00_0.01/MSTeamsIcon.webp"
+                    alt="">
+                <img src="https://static.wixstatic.com/media/5a71f2_87ff2dd25a6343f1bcf7af34735cfb4e~mv2.png/v1/fill/w_128,h_58,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_87ff2dd25a6343f1bcf7af34735cfb4e~mv2.webp"
+                    alt="">
+            </div>
+            <h5>團隊溝通協作及通知
+            </h5>
+            <div class="dote">課程過程中的線上討論、遠端溝通、或技術分享，將可透過 Microsoft Teams 或Slack 工具。另外練習的程式碼提交至 GitHub、或是 Trello
+                上的工作狀態更新，或是 AzureDevOps 上自動化建置的狀態，皆可發通知至 Microsoft Teams或 Slack，透過自動化提升工作效率，並熟悉一個軟體開發團隊的協同合作</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="coperation row">
+        <div class="title til-text">
+            <div class="blue"></div>
+            <p>在課程及作品實作中，將採用這些工具 - 熟悉實務上軟體開發團隊的運作、分工及真實專案的流程 </p>
+        </div>
+        <div class="row">
+            <div class="item col-3 ">
+                <div class="part2">
+                    <img src="https://static.wixstatic.com/media/5a71f2_0bbda05c4d02483f9d645e319748e631~mv2.png/v1/fill/w_147,h_42,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_0bbda05c4d02483f9d645e319748e631~mv2.webp"
+                        alt="">
+                    <img src="https://static.wixstatic.com/media/5a71f2_8a669d9249a84f8380642dc28ee6ed0a~mv2.png/v1/fill/w_144,h_46,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_8a669d9249a84f8380642dc28ee6ed0a~mv2.webp"
+                        alt="">
+                </div>
+            </div>
+            <div class="item col-3 ">
+                <div class="part2">
+                    <img src="https://static.wixstatic.com/media/5a71f2_c1c1b501ccb64c0f84ae8db7a9f229b4~mv2.png/v1/crop/x_12,y_2,w_342,h_144/fill/w_150,h_51,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_c1c1b501ccb64c0f84ae8db7a9f229b4~mv2.webp"
+                        alt="">
+                    <img src="https://static.wixstatic.com/media/5a71f2_119932e7e8094dbb8b79f8b087885b0e~mv2.png/v1/fill/w_144,h_49,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_119932e7e8094dbb8b79f8b087885b0e~mv2.webp"
+                        alt="">
+                </div>
+            </div>
+            <div class="item col-3 ">
+                <div class="part2">
+                    <img src="https://static.wixstatic.com/media/5a71f2_f9afe2e676684827afe6f88f08104c70~mv2.png/v1/fill/w_127,h_44,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_f9afe2e676684827afe6f88f08104c70~mv2.webp"
+                        alt="">
+                    <img src="https://static.wixstatic.com/media/5a71f2_e3b9a4e6927e4ffe828d3ea8788ab30c~mv2.png/v1/fill/w_77,h_51,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_e3b9a4e6927e4ffe828d3ea8788ab30c~mv2.webp"
+                        alt="">
+                </div>
+            </div>
+            <div class="item col-3 ">
+                <div class="part2">
+                    <img src="https://static.wixstatic.com/media/5a71f2_58a6e0c593db4ad6914edfe24739bfef~mv2.png/v1/fill/w_159,h_42,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_58a6e0c593db4ad6914edfe24739bfef~mv2.webp"
+                        alt="">
+                    <img src="https://static.wixstatic.com/media/5a71f2_1f82650c48074d669339af555295f299~mv2.png/v1/fill/w_98,h_56,al_c,q_85,usm_0.66_1.00_0.01/5a71f2_1f82650c48074d669339af555295f299~mv2.webp"
+                        alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="item col-6">
+            <h5>合作及接洽</h5>
+            <p>有興趣軟體工程師徵才、或成為我們的講師或擔任指導學生的企業導師 (Inspire Mentor)，請與我們連絡</p>
+            <p>email: contact@build-school.com 電話: 02-66057606</p>
+            <p>​台北: 台北市忠孝東路三段96號11F-1 (台北科大對面/忠孝新生站3號出口)</p>
+            <p>新竹: 中華大學行政大樓圖資處</p>
+            <img src="https://static.wixstatic.com/media/e316f544f9094143b9eac01f1f19e697.png/v1/fill/w_22,h_22,al_c,q_85,usm_0.66_1.00_0.01/e316f544f9094143b9eac01f1f19e697.webp"
+                alt="">
+            <img src="https://static.wixstatic.com/media/a1b09fe8b7f04378a9fe076748ad4a6a.png/v1/fill/w_22,h_22,al_c,q_85,usm_0.66_1.00_0.01/a1b09fe8b7f04378a9fe076748ad4a6a.webp"
+                alt="">
+        </div>
+        <div class="item col-6">
+            <p>
+                <a href="https://www.build-school.com/privacy">隱私權宣告</a>
+                <span>2020 by Build School</span>
+            </p>
+        </div>
+        <div class="back">
+            <a href="#">
+                <img src="data:image/svg+xml;base64,PHN2ZyBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiBpZD0iY29tcC1pczAyeTY5b3N2Z2NvbnRlbnQiIGRhdGEtYmJveD0iNi40NDMgNDcuNDk3IDE4Ny4xMTQgMTA1LjAwOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSI2LjQ0MyA0Ny40OTcgMTg3LjExNCAxMDUuMDA4IiByb2xlPSJpbWciPgogICAgPGc+CiAgICAgICAgPHBhdGggZD0iTTE3NC40NzYgNTEuMjYxbC03NC43MDQgNzQuMTkzTDI1LjU3OCA1MC43NWMtNC4yODctNC4zMTYtMTEuNTY2LTQuMzQxLTE1Ljg4Mi0uMDU0cy00LjM0MSAxMS41NjUtLjA1NSAxNS44ODJsODIuMTA3IDgyLjY3M2M0LjI4NyA0LjMxNiAxMS41NjYgNC4zNDEgMTUuODgyLjA1NWw4Mi42NzMtODIuMTA3YzQuMzE2LTQuMjg3IDQuMzQxLTExLjU2Ni4wNTUtMTUuODgycy0xMS4yMzUtNC4zNDItMTUuODgyLS4wNTZ6Ii8+CiAgICA8L2c+Cjwvc3ZnPg=="
+                    alt=""></a>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="dist/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                responsive: {
+                    768: {
+                        items: 1,
+                        nav: true,
+                        loop: true
+                    },
+                    922: {
+                        items: 1,
+                        nav: false,
+                        loop: true
+                    },
+                    1200: {
+                        items: 1,
+                        nav: true,
+                        loop: true
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
