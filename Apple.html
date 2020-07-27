@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            position: relative;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        p {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .img-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .img-group img {
+            position: fixed;
+            top: 15px;
+        }
+
+        .img-group img:nth-child(1)~img {
+            display: none;
+        }
+
+        .content {
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .title {
+            padding: 7px 0px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 44px;
+            text-align: left;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        button {
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 20px 70px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-right: 15px;
+            margin-top: 15px;
+            width: 197px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        button:hover {
+            border: 1px solid #333;
+        }
+
+        button:active {
+            border: 1px solid #44f;
+        }
+
+        .style {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .style .color-bl {
+            background-image: url(https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=102&hei=102&fmt=png-alpha&.v=1552422652805);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+
+        .style .color-si {
+            background-image: url(https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=102&hei=102&fmt=png-alpha&.v=1552422655664);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+
+        .style .color-go {
+            background-image: url(https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-201903?wid=102&hei=102&fmt=png-alpha&.v=1552422653869);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 32px;
+            height: 32px;
+            margin-bottom: 5px;
+        }
+
+        .store {
+            margin-top: 20px;
+            display: flex;
+        }
+
+        .store button {
+            padding: 20px 50px;
+            position: relative;
+        }
+
+        .store h4 strong {
+            font-size: 29px;
+            line-height: 29px;
+        }
+
+        .store h4 {
+            font-size: 19px;
+        }
+
+        .store h4::after {
+            content: '1';
+            font-size: 12px;
+            line-height: 12px;
+            position: relative;
+            bottom: 5px;
+        }
+
+        .link {
+            display: flex;
+        }
+
+        .link button:last-child {
+            padding: 20px 0px;
+        }
+
+        .link h4 {
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 21px;
+            color: #333;
+        }
+
+        .price {
+            margin: 20px 0px 90px 0px;
+        }
+
+        .price h3 {
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 44px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .chang {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #phone{
+            display: none;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="chang">
+        <button id="ipad" onclick="changipad()">ipad</button>
+        <button id="iphone" onclick="changiphone()">iphon</button>
+    </div>
+
+    <div class="container" id="pad">
+        <div class="row">
+            <div class="col-6">
+                <div class="img-group" id="imgall">
+
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-hero-unselected-201909_GEO_TW?wid=372&amp;hei=606&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1567298453562"
+                        alt="全" id="all">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-wifi-select-space-201909_GEO_TW?wid=470&hei=556&fmt=png-alpha&.v=1567443080749"
+                        alt="灰" id="bl">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-wifi-select-silver-201909_GEO_TW?wid=470&hei=556&fmt=png-alpha&.v=1567299773948"
+                        alt="銀" id="si">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-wifi-select-gold-201909_GEO_TW?wid=470&hei=556&fmt=png-alpha&.v=1567302181892"
+                        alt="金" id="go">
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="content">
+
+                    <div class="title">
+                        <h2>購買 iPad</h2>
+                        <p>購買 iPad 可享免額外付費運送服務。</p>
+                    </div>
+
+                    <div class="style">
+                        <button class="black" onclick="changblack()">
+                            <div class="color-bl"></div>
+                            <div class="text">
+                                太空灰色
+                            </div>
+                        </button>
+                        <button class="silver" onclick="changsilver()">
+                            <div class="color-si"></div>
+                            <div class="text">
+                                銀色
+                            </div>
+                        </button>
+                        <button class="golden" onclick="changgolden()">
+                            <div class="color-go"></div>
+                            <div class="text">
+                                金色
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="store">
+                        <button class="device" onclick="changdevicesmall()">
+                            <h4><strong>32</strong>GB</h4>
+                            <p>NT$10,900 起</p>
+                        </button>
+                        <button class="device" onclick="changdevicelarge()">
+                            <h4><strong>128</strong>GB</h4>
+                            <p>NT$13,900 起</p>
+                        </button>
+                    </div>
+
+                    <div class="link">
+                        <button class="ability" onclick="changlinkwi()">
+                            <h4>Wi-Fi</h4>
+                            <p>NT$13,900</p>
+                        </button>
+                        <button class="ability" onclick="changlink()">
+                            <h4>Wi-Fi + 行動網路</h4>
+                            <p>NT$18,400</p>
+                        </button>
+                    </div>
+
+                    <div class="price">
+                        <h3 id="money">NT$13,900起</h3>
+                        <p>含營業稅和其他法定稅費：約 <span>NT$687</span>。*</p>
+                        <button class="confirm">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="phone">
+        <div class="row">
+            <div class="col-6">
+                <div class="img-group" id="imgall">
+
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-11-pro-select-2019-family?wid=441&amp;hei=529&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1586586488946"
+                        alt="全" id="all">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-wifi-select-space-201909_GEO_TW?wid=470&hei=556&fmt=png-alpha&.v=1567443080749"
+                        alt="灰" id="bl">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-wifi-select-silver-201909_GEO_TW?wid=470&hei=556&fmt=png-alpha&.v=1567299773948"
+                        alt="銀" id="si">
+                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-wifi-select-gold-201909_GEO_TW?wid=470&hei=556&fmt=png-alpha&.v=1567302181892"
+                        alt="金" id="go">
+
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="content">
+
+                    <div class="title">
+                        <h2>購買 iPhone</h2>
+                        <p>購買 iPhone 可享免額外付費運送服務。</p>
+                    </div>
+
+                    <div class="style">
+                        <button class="black" onclick="changblack()">
+                            <div class="color-bl"></div>
+                            <div class="text">
+                                太空灰色
+                            </div>
+                        </button>
+                        <button class="silver" onclick="changsilver()">
+                            <div class="color-si"></div>
+                            <div class="text">
+                                銀色
+                            </div>
+                        </button>
+                        <button class="golden" onclick="changgolden()">
+                            <div class="color-go"></div>
+                            <div class="text">
+                                金色
+                            </div>
+                        </button>
+                    </div>
+
+                    <div class="store">
+                        <button class="device" onclick="changdevicesmall()">
+                            <h4><strong>32</strong>GB</h4>
+                            <p>NT$10,900 起</p>
+                        </button>
+                        <button class="device" onclick="changdevicelarge()">
+                            <h4><strong>128</strong>GB</h4>
+                            <p>NT$13,900 起</p>
+                        </button>
+                    </div>
+
+                    <div class="link">
+                        <button class="ability" onclick="changlinkwi()">
+                            <h4>Wi-Fi</h4>
+                            <p>NT$13,900</p>
+                        </button>
+                        <button class="ability" onclick="changlink()">
+                            <h4>Wi-Fi + 行動網路</h4>
+                            <p>NT$18,400</p>
+                        </button>
+                    </div>
+
+                    <div class="price">
+                        <h3 id="money">NT$13,900起</h3>
+                        <p>含營業稅和其他法定稅費：約 <span>NT$687</span>。*</p>
+                        <button class="confirm">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="Apple.js"></script>
+</body>
+
+</html>
